@@ -5,11 +5,12 @@ async function sendFormData() {
     }
 
     const formDataObj = JSON.parse(formDataRaw);
-
+    localStorage.removeItem("formData");
 
     // Prepare FormData for API
     const formData = new FormData();
     formData.append("sheetName", "Lead");
+    formData.append("Ism", formDataObj.Ism);
     formData.append("Telefon raqam", formDataObj.TelefonRaqam);
     formData.append("Royhatdan o'tgan vaqti", formDataObj.SanaSoat);
 
@@ -22,9 +23,7 @@ async function sendFormData() {
         );
 
 
-        if (response.ok) {
-            localStorage.removeItem("formData");
-        } else {
+        if (!response.ok) {
             throw new Error("API response was not ok");
         }
     } catch (error) {

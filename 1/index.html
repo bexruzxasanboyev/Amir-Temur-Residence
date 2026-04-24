@@ -223,7 +223,6 @@
     <main>
         <div class="wrapper">
             <div class="container">
-
                 <h1 class="title">
                     Chirchiq shahridan <span>boshlang'ich to'lovsiz 60 oyga </span> bo'lib to'lashga uy xarid qiling
                 </h1>
@@ -244,7 +243,7 @@
     <div id="registrationModal" class="homeModal" style="display: none">
         <div class="homeModalOverlay"></div>
         <div class="homeFormContainer">
-            <button type="button" class="closeButton" id="closeModalBtn" aria-label="Modalni yopish" title="Yopish">
+            <button class="closeButton" id="closeModalBtn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
                 <path d="M1 11L11 1M1 1.00001L11 11" stroke="currentColor" stroke-width="1.5"
                     stroke-linecap="round" />
@@ -252,17 +251,26 @@
         </button>
             <div class="homeFormTop">
                 <h1 class="homeFormTopTitle">
-                    Bepul qatnashish uchun ma'lumotlaringizni kiriting!
+                    Ro'yxatdan o'tish uchun ma'lumotlaringizni kiriting!
                 </h1>
             </div>
             <form id="registrationForm" name="contact-form">
+                <!-- ISM -->
+                <div class="HomeFormRow">
+                    <label class="HomeFormRowLabel" for="name">Ismingiz:</label>
+                    <input class="HomeFormRowInput" type="text" id="name" name="name" placeholder="Ismingizni kiriting" autocomplete="name" />
+                    <p class="homeFormErrorText" id="nameError" style="display: none">
+                        ❌ Ismingizni kiriting!
+                    </p>
+                </div>
+
                 <!-- TELEFON -->
                 <div class="HomeFormRow">
                     <label class="HomeFormRowLabel" for="phone">Telefon raqamingiz:</label>
 
                     <div class="phone-input-container">
                         <!-- LEFT: country -->
-                        <button type="button" type="button" class="selected-country" id="selectedCountry">
+                        <button type="button" class="selected-country" id="selectedCountry">
                         <span class="selected-flag" id="selectedCountryFlag">🇺🇿</span>
 
                         <svg id="dropdownIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -287,6 +295,7 @@
                     </p>
                 </div>
 
+
                 <button type="submit" class="HomeFormBtn" id="submitBtn">
                 DAVOM ETISH
             </button>
@@ -294,6 +303,7 @@
 
         </div>
     </div>
+
     <script defer src="./js/phoneFormat.js"></script>
     <script defer src="./js/app.js"></script>
 </body>
